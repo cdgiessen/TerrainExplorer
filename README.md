@@ -17,3 +17,16 @@ X for wireframe mode
 G for disco mode \*EPILEPSY WARNING\*
 
 ## Screenshots
+Uses Mount St. Helens as source terrain
+
+View of the rim from a near and far perspective
+![](https://github.com/cdgiessen/TerrainVisualizer/blob/master/Resources/Cinematic.PNG)
+
+View from inside the crater looking at the rim
+![](https://github.com/cdgiessen/TerrainVisualizer/blob/master/Resources/Textures!.PNG)
+
+Shows specular highlights
+![](https://github.com/cdgiessen/TerrainVisualizer/blob/master/Resources/Specular.PNG)
+
+View with DISCO mode on
+![](https://github.com/cdgiessen/TerrainVisualizer/blob/master/Resources/DISCO!!!.PNG)
