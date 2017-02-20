@@ -1,4 +1,4 @@
-# TerrainVisualizer
+# TerrainExplorer
 
 This program generates an explorable terrain using USGS geological survey data.
 
