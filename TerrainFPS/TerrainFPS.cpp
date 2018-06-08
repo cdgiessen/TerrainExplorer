@@ -48,6 +48,11 @@ void do_movement(TerrainFPS terrain)
 	camera.UpdatePosition(terrain.TerrainHeight(camera.Position.x + terrain.nrows / 2, camera.Position.z + terrain.ncols / 2) * terrain.terrainHeightScale, deltaTime);
 	//std::cout << camera.Position.y << std::endl;
 
+	if (keys[GLFW_KEY_TAB]) {
+
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+	}
+		
 }
 
 static void error_callback(int error, const char* description)
@@ -118,6 +123,9 @@ void OnMouseButton(GLFWwindow* window, int glfwButton, int glfwAction) {
 		else
 			bullet.Position.y += 0.0f;
 		bullets.push_back(bullet);
+
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
 	}
 }
 
@@ -163,7 +171,6 @@ void setup_window() {
 
 	// Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
 	glewExperimental = GL_TRUE;
-
 	glfwSwapInterval(1);
 
 	// Initialize GLEW to setup the OpenGL Function pointers
@@ -299,9 +306,11 @@ void TerrainFPS::GenSubDividedTerrainSurface() {
 			terVerts[curPlace++] = i - data->nrows / 2;
 			terVerts[curPlace++] = ((data->data[i][j]) - data->lowestValue) / data->range;
 			terVerts[curPlace++] = j - data->ncols / 2;
+			
 			terVerts[curPlace++] = CalcColorAtElevation((data->data[i][j] - data->lowestValue) / data->range, 0);
 			terVerts[curPlace++] = CalcColorAtElevation((data->data[i][j] - data->lowestValue) / data->range, 1);
 			terVerts[curPlace++] = CalcColorAtElevation((data->data[i][j] - data->lowestValue) / data->range, 2);
+			
 			float hL = Height(i + 1, j);
 			float hR = Height(i - 1, j);
 			float hD = Height(i, j + 1);
@@ -574,6 +583,10 @@ int main() {
 		GLfloat currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
+
+		glfwSetWindowTitle(window,
+			std::string(std::string("Terrain FPS ") + std::to_string(1 / deltaTime).c_str()).c_str()
+			);
 
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
 		glfwPollEvents();

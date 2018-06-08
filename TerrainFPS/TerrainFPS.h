@@ -101,6 +101,7 @@ Camera camera(glm::vec3(0, 60, 0));
 bool keys[1024];
 GLfloat lastX = 400, lastY = 300;
 bool firstMouse = true;
+bool mouseControl = false;
 
 // Deltatime
 GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
