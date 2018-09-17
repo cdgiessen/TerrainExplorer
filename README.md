@@ -7,6 +7,8 @@ Given a terrain height data file in the GRIDFLOAT format, it will allow users to
 Written in C++11 and uses the follow software libraries:
 OpenGL 3.3, GLFW, GLEW, GLM, SOIL
 
+Features Phong Shading and directional lighting. 
+
 ## Controls
 Mouse Look for rotating the camera
 WASD for movement
@@ -16,7 +18,7 @@ X for wireframe mode
 G for disco mode
 
 ## Screenshots
-Uses Mount St. Helens as source terrain
+Mount St. Helens is used as an example location
 
 View of the rim from a near and far perspective
 ![](https://github.com/cdgiessen/TerrainVisualizer/blob/master/Resources/Cinematic.PNG)
