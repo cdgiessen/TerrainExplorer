@@ -6,7 +6,7 @@
 #include <iostream>
 
 // GLEW
-#define GLEW_STATIC
+//#define GLEW_STATIC
 #include <GL/glew.h>
 
 // GLFW
@@ -20,7 +20,7 @@
 // SOIL
 #include "SOIL.h"
 
-// Other includes
+// Other includes	
 #include "Shader.h"
 #include "Camera.h"
 #include "GridFloatData.h"
